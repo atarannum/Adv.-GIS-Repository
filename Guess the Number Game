@@ -1,0 +1,19 @@
+import random
+
+secret_num = random.randrange(1, 101)  
+user_guess = 0
+attempts = 0
+
+while user_guess != secret_num:  
+    user_guess = int(input("Enter a number between 1 to 100: "))
+    attempts += 1
+    if attempts == 7:
+        print(f"Game Over. The correct number is {secret_num}") 
+        break
+     
+    if user_guess < secret_num:
+         print("You have guessed too low")
+    elif user_guess > secret_num:
+         print("You have guessed too high") 
+    elif user_guess == secret_num:
+         print(f"Congratulations! You have won. Attempts {attempts}")
